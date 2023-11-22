@@ -1,5 +1,5 @@
 ''' Super simple module to create basic random data for tutorials'''
-import random
+import secrets
 
 first_names = ['John', 'Jane', 'Corey', 'Travis', 'Dave', 'Kurt', 'Neil', 'Sam', 'Steve', 'Tom', 'James', 'Robert', 'Michael', 'Charles', 'Joe', 'Mary', 'Maggie', 'Nicole', 'Patricia', 'Linda', 'Barbara', 'Elizabeth', 'Laura', 'Jennifer', 'Maria']
 
@@ -12,16 +12,16 @@ fake_cities = ['Metropolis', 'Eerie', "King's Landing", 'Sunnydale', 'Bedrock', 
 states = ['AL', 'AK', 'AZ', 'AR', 'CA', 'CO', 'CT', 'DC', 'DE', 'FL', 'GA', 'HI', 'ID', 'IL', 'IN', 'IA', 'KS', 'KY', 'LA', 'ME', 'MD', 'MA', 'MI', 'MN', 'MS', 'MO', 'MT', 'NE', 'NV', 'NH', 'NJ', 'NM', 'NY', 'NC', 'ND', 'OH', 'OK', 'OR', 'PA', 'RI', 'SC', 'SD', 'TN', 'TX', 'UT', 'VT', 'VA', 'WA', 'WV', 'WI', 'WY']
 
 for num in range(100):
-    first = random.choice(first_names)
-    last = random.choice(last_names)
+    first = secrets.SystemRandom().choice(first_names)
+    last = secrets.SystemRandom().choice(last_names)
 
-    phone = f'{random.randint(100, 999)}-555-{random.randint(1000,9999)}'
+    phone = f'{secrets.SystemRandom().randint(100, 999)}-555-{secrets.SystemRandom().randint(1000,9999)}'
 
-    street_num = random.randint(100, 999)
-    street = random.choice(street_names)
-    city = random.choice(fake_cities)
-    state = random.choice(states)
-    zip_code = random.randint(10000, 99999)
+    street_num = secrets.SystemRandom().randint(100, 999)
+    street = secrets.SystemRandom().choice(street_names)
+    city = secrets.SystemRandom().choice(fake_cities)
+    state = secrets.SystemRandom().choice(states)
+    zip_code = secrets.SystemRandom().randint(10000, 99999)
     address = f'{street_num} {street} St., {city} {state} {zip_code}'
 
     email = first.lower() + last.lower() + '@bogusemail.com'
