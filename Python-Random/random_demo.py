@@ -1,6 +1,6 @@
-import random
+import secrets
 
 deck = list(range(1, 53))
 
-hand = random.sample(deck, k=5)
+hand = secrets.SystemRandom().sample(deck, k=5)
 print(hand)

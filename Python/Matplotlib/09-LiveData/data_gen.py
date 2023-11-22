@@ -1,7 +1,7 @@
 
 import csv
-import random
 import time
+import secrets
 
 x_value = 0
 total_1 = 1000
@@ -29,7 +29,7 @@ while True:
         print(x_value, total_1, total_2)
 
         x_value += 1
-        total_1 = total_1 + random.randint(-6, 8)
-        total_2 = total_2 + random.randint(-5, 6)
+        total_1 = total_1 + secrets.SystemRandom().randint(-6, 8)
+        total_2 = total_2 + secrets.SystemRandom().randint(-5, 6)
 
     time.sleep(1)
